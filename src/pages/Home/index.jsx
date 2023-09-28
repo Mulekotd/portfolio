@@ -13,83 +13,96 @@ const vitec2 = new URL('/src/assets/images/vitrines_tec (2).jpg', import.meta.ur
 const etc = new URL('/src/assets/downloads/Certificado Exposição de Jogos.pdf', import.meta.url).href
 const vitec = new URL('/src/assets/downloads/certificado-artigo-821610-9maoY.pdf', import.meta.url).href
 
-export default function Home() {
-
-  function getAge(birthday) {
-    var birthday = new Date("May 20, 2005 00:00:00");
-    var year = new Date().getFullYear() - birthday.getFullYear();
-    var month = new Date().getMonth() - birthday.getMonth();
-    if (month < 0 || (month === 0 && new Date().getDate() < birthday.getDate())) {
-      year--;
-    }
-    return year; 
+function getAge(birthday) {
+  var birthday = new Date("May 20, 2005 00:00:00");
+  var year = new Date().getFullYear() - birthday.getFullYear();
+  var month = new Date().getMonth() - birthday.getMonth();
+  if (month < 0 || (month === 0 && new Date().getDate() < birthday.getDate())) {
+    year--;
   }
-    
-  const greetingMessage = () => {
-    let h = new Date().toLocaleTimeString("pt-BR", {hour: "numeric", hour12: false});
-    if (h >= 0 && h <= 5) { 
-      return "Boa madrugada";
-    } else if (h >= 6 && h < 12) { 
-      return "Bom dia";
-    } else if (h >= 12 && h < 18) { 
-      return "Boa tarde";
-    } else if (h >= 18 && h <= 23) { 
-      return "Boa noite";
-    }
-  }
-
-  const profile = {
-    width: "350px",
-    height: "300px",
-    borderRadius: "36px"
-  }
-
-  const title = {
-    fontWeight: "bold",
-    fontSize: "24px",
-    textTransform: "uppercase"
-  }
-
-  const aboutContainer = {
-    border: "none"
-  }
-
-  const aboutContent = {
-    marginLeft: "24px",
-    width: "100%",
-    border: "none"
-  }
-
-  const skillsContainer = {
-    width: "100%",
-    height: "auto", border: "none"
-  }
-
-  const skillsContent = {
-    height: "100%",
-    width: "50%",
-    boxShadow: "rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px"
-  }
+  return year; 
+}
   
-  const image = {
-    height: "100%"
+const greetingMessage = () => {
+  let h = new Date().toLocaleTimeString("pt-BR", {hour: "numeric", hour12: false});
+  if (h >= 0 && h <= 5) { 
+    return "Boa madrugada";
+  } else if (h >= 6 && h < 12) { 
+    return "Bom dia";
+  } else if (h >= 12 && h < 18) { 
+    return "Boa tarde";
+  } else if (h >= 18 && h <= 23) { 
+    return "Boa noite";
   }
+}
 
-  const devContainer = {
-    height: "auto",
-    boxShadow: "rgba(0, 0, 0, 0.15) 0px 3px 3px 0px"
-  }
+const profile = {
+  width: "210px",
+  height: "200px",
+  overflow: "hidden",
+  borderRadius: "120px",
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center"
+}
 
-  const devContent = {
-    height: "360px",
-    display: "flex",
-    justifyContent: "space-around"
-  }
+const profileImage = {
+  width: "100%",
+  height: "100%",
+  objectFit: "cover"
+}
 
-  const badge = {
-    marginLeft: "12px"
-  }
+const title = {
+  fontWeight: "bold",
+  fontSize: "24px",
+  textTransform: "uppercase"
+}
 
+const aboutContainer = {
+  border: "none"
+}
+
+const aboutContent = {
+  marginLeft: "24px",
+  width: "100%",
+  objectFit: "cover",
+  border: "none"
+}
+
+const skillsContainer = {
+  width: "100%",
+  height: "auto", 
+  border: "none"
+}
+
+const skillsContent = {
+  height: "100%",
+  width: "50%",
+  boxShadow: "rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px"
+}
+
+const image = {
+  height: "100%",
+  width: "50%",
+  gap: "10px"
+}
+
+const devContainer = {
+  height: "auto",
+  boxShadow: "rgba(0, 0, 0, 0.15) 0px 3px 3px 0px"
+}
+
+const devContent = {
+  height: "360px",
+  display: "flex",
+  justifyContent: "space-around"
+}
+
+const badge = {
+  marginLeft: "12px"
+}
+
+export default function Home() {
   return (
     <main
     className="d-flex flex-column mt-4"
@@ -99,11 +112,15 @@ export default function Home() {
       className="container bd-highlight d-flex flex-row p-4"
       style={aboutContainer}
       >
-        <Image
-        alt={"perfil"}
-        src={perfil}
+        <Card
         style={profile}
-        />
+        >
+          <Image
+            alt="perfil"
+            src={perfil}
+            style={profileImage}
+          />  
+        </Card>
         <Card
         className="d-flex flex-collumn p-4"
         style={aboutContent}
@@ -179,7 +196,7 @@ export default function Home() {
           onde desempenhei o papel de palestrante e monitor de uma sala temática, aberta ao público externo, de jogos desenvolvidos
           no âmbito da instituição.
         </p>
-        <div className="container" style={devContent}>
+        <div className="container gap-4" style={devContent}>
           <img style={image} alt="etc1" src={etc1} />
           <img style={image} alt="etc2" src={etc2} />
         </div>
@@ -198,7 +215,7 @@ export default function Home() {
           produtos e serviços panteados resultantes de projetos de pesquisa e inovação. Essa Vitrine visa promover
           a visibilidade perante o público interno e externo da instituição, bem como obter parcerias e financiamentos.
         </p>
-        <div className="container" style={devContent}>
+        <div className="container gap-4" style={devContent}>
           <img style={image} alt="vitec1" src={vitec1} />
           <img style={image} alt="vitec2" src={vitec2} />
         </div>

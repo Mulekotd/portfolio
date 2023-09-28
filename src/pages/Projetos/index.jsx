@@ -6,6 +6,8 @@ import Cards from '/src/components/Cards'
 const parrotcloud = new URL('/src/assets/images/parrotcloud.png', import.meta.url).href
 const mostra = new URL('/src/assets/images/mostra_ifrj.png', import.meta.url).href
 const calculadora = new URL('/src/assets/images/calculadora.png', import.meta.url).href
+const last = new URL('/src/assets/images/last.png', import.meta.url).href
+const crud = new URL('/src/assets/images/crud.png', import.meta.url).href
 
 export default function Projects() {
 
@@ -50,6 +52,22 @@ export default function Projects() {
           className="col"
           href={"https://mulekotd.github.io/simple-react-calculator/"}
           title={"React Simple Calculator"}
+          />
+
+          <Cards
+          alt={"Last 2"}
+          src={last}
+          className="col"
+          href={"https://app.last.app.br/dashboard/"}
+          title={"Projeto LAST 2"}
+          />
+
+          <Cards
+          alt={"CRUD em PHP"}
+          src={crud}
+          className="col"
+          href={"https://github.com/Mulekotd/php-crud"}
+          title={"CRUD"}
           />
         </Card>
       </Card>
