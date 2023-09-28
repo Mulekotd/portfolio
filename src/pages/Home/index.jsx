@@ -168,12 +168,12 @@ export default function Home() {
           <ul
           className="mt-2"
           >
-            <li className="mt-2">HTML</li>
-            <li className="mt-2">CSS</li>
+            <li className="mt-2">PostgreSQL</li>
             <li className="mt-2">JavaScript</li>
-            <li className="mt-2">React.JS</li>
-            <li className="mt-2">Node.JS</li>
-            <li className="mt-2">MySQL</li>
+            <li className="mt-2">React.js</li>
+            <li className="mt-2">Node.js</li>
+            <li className="mt-2">Docker</li>
+            <li className="mt-2">PHP</li>
           </ul>
         </Card>
       </Card>
