@@ -5,9 +5,9 @@ import Cards from '/src/components/Cards';
 // static images handling
 const parrotcloud = new URL('/src/assets/images/parrotcloud.png', import.meta.url).href;
 const mostra = new URL('/src/assets/images/mostra_ifrj.png', import.meta.url).href;
-const calculadora = new URL('/src/assets/images/calculadora.png', import.meta.url).href;
+const calculadora = new URL('/src/assets/images/calculadora.gif', import.meta.url).href;
 const last = new URL('/src/assets/images/last.png', import.meta.url).href;
-const crud = new URL('/src/assets/images/crud.png', import.meta.url).href;
+const crud = new URL('/src/assets/images/crud.gif', import.meta.url).href;
 
 const container = {
   marginLeft: "4rem",
