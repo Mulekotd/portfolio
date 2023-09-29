@@ -1,130 +1,118 @@
-import React from 'react'
-import { Card, Image } from 'react-bootstrap'
-import { HiBadgeCheck } from 'react-icons/hi'
+import React from 'react';
+import { Card, Image } from 'react-bootstrap';
+import { HiBadgeCheck } from 'react-icons/hi';
 
-//static images handling
-const perfil = new URL('/src/assets/images/perfil.jpg', import.meta.url).href
-const etc1 = new URL('/src/assets/images/semana_etc (1).jpg', import.meta.url).href
-const etc2 = new URL('/src/assets/images/semana_etc (2).jpg', import.meta.url).href
-const vitec1 = new URL('/src/assets/images/vitrines_tec (1).jpg', import.meta.url).href
-const vitec2 = new URL('/src/assets/images/vitrines_tec (2).jpg', import.meta.url).href
+// static images handling
+const perfil = new URL('/src/assets/images/perfil.jpg', import.meta.url).href;
+const etc1 = new URL('/src/assets/images/semana_etc (1).jpg', import.meta.url).href;
+const etc2 = new URL('/src/assets/images/semana_etc (2).jpg', import.meta.url).href;
+const vitec1 = new URL('/src/assets/images/vitrines_tec (1).jpg', import.meta.url).href;
+const vitec2 = new URL('/src/assets/images/vitrines_tec (2).jpg', import.meta.url).href;
 
-//static download handling
-const etc = new URL('/src/assets/downloads/Certificado Exposição de Jogos.pdf', import.meta.url).href
-const vitec = new URL('/src/assets/downloads/certificado-artigo-821610-9maoY.pdf', import.meta.url).href
-
-function getAge(birthday) {
-  var birthday = new Date("May 20, 2005 00:00:00");
-  var year = new Date().getFullYear() - birthday.getFullYear();
-  var month = new Date().getMonth() - birthday.getMonth();
-  if (month < 0 || (month === 0 && new Date().getDate() < birthday.getDate())) {
-    year--;
-  }
-  return year; 
-}
-  
-const greetingMessage = () => {
-  let h = new Date().toLocaleTimeString("pt-BR", {hour: "numeric", hour12: false});
-  if (h >= 0 && h <= 5) { 
-    return "Boa madrugada";
-  } else if (h >= 6 && h < 12) { 
-    return "Bom dia";
-  } else if (h >= 12 && h < 18) { 
-    return "Boa tarde";
-  } else if (h >= 18 && h <= 23) { 
-    return "Boa noite";
-  }
-}
+// static download handling
+const etc = new URL('/src/assets/downloads/Certificado Exposição de Jogos.pdf', import.meta.url).href;
+const vitec = new URL('/src/assets/downloads/certificado-artigo-821610-9maoY.pdf', import.meta.url).href;
 
 const profile = {
   width: "210px",
   height: "200px",
   overflow: "hidden",
-  borderRadius: "120px",
+  borderRadius: "50%",
   display: "flex",
   justifyContent: "center",
-  alignItems: "center"
-}
+  alignItems: "center",
+  marginLeft: "auto",
+  marginRight: "auto",
+  marginTop: "20px"
+};
 
 const profileImage = {
   width: "100%",
   height: "100%",
   objectFit: "cover"
-}
+};
 
 const title = {
   fontWeight: "bold",
   fontSize: "24px",
   textTransform: "uppercase"
-}
+};
 
-const aboutContainer = {
+const container = {
   border: "none"
-}
+};
 
-const aboutContent = {
+const content = {
   marginLeft: "24px",
   width: "100%",
   objectFit: "cover",
   border: "none"
-}
+};
 
 const skillsContainer = {
   width: "100%",
   height: "auto", 
   border: "none"
-}
+};
 
 const skillsContent = {
   height: "100%",
   width: "50%",
   boxShadow: "rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px"
-}
+};
 
 const image = {
   height: "100%",
   width: "50%",
   gap: "10px"
-}
+};
 
 const devContainer = {
   height: "auto",
   boxShadow: "rgba(0, 0, 0, 0.15) 0px 3px 3px 0px"
-}
+};
 
 const devContent = {
   height: "360px",
   display: "flex",
   justifyContent: "space-around"
-}
+};
 
 const badge = {
   marginLeft: "12px"
-}
+};
 
 export default function Home() {
+  function getAge(birthday) {
+    var birthday = new Date("May 20, 2005 00:00:00");
+    var year = new Date().getFullYear() - birthday.getFullYear();
+    var month = new Date().getMonth() - birthday.getMonth();
+    if (month < 0 || (month === 0 && new Date().getDate() < birthday.getDate())) {
+      year--;
+    }
+    return year; 
+  };
+    
+  const greetingMessage = () => {
+    let h = new Date().toLocaleTimeString("pt-BR", {hour: "numeric", hour12: false});
+    if (h >= 0 && h <= 5) { 
+      return "Boa madrugada";
+    } else if (h >= 6 && h < 12) { 
+      return "Bom dia";
+    } else if (h >= 12 && h < 18) { 
+      return "Boa tarde";
+    } else if (h >= 18 && h <= 23) { 
+      return "Boa noite";
+    }
+  };
+
   return (
-    <main
-    className="d-flex flex-column mt-4"
-    id="canvas_container"
-    >
-      <Card
-      className="container bd-highlight d-flex flex-row p-4"
-      style={aboutContainer}
-      >
-        <Card
-        style={profile}
-        >
-          <Image
-            alt="perfil"
-            src={perfil}
-            style={profileImage}
-          />  
+    <main className="d-flex flex-column mt-4" id="canvas_container">
+      <Card className="container bd-highlight d-flex flex-row p-4" style={container}>
+        <Card style={profile}>
+          <Image alt="perfil" src={perfil} style={profileImage} />  
         </Card>
-        <Card
-        className="d-flex flex-collumn p-4"
-        style={aboutContent}
-        >
+        <Card className="d-flex flex-collumn p-4" style={content}>
           <p style={title}>Sobre Mim</p>
           <p>
             {greetingMessage()}, eu me chamo João Pedro Silverio Gama tenho {getAge()} anos e possuo experiência
@@ -140,34 +128,21 @@ export default function Home() {
         </Card>
       </Card>
 
-      <Card
-      className="container d-flex flex-row"
-      style={skillsContainer}
-      >
-        <Card
-        className="container d-flex flex-column align-items-center p-3 m-4"
-        style={skillsContent}
-        >
+      <Card className="container d-flex flex-row" style={skillsContainer}>
+        <Card className="container d-flex flex-column align-items-center p-3 m-4" style={skillsContent}>
           <h3>Soft Skills</h3>
 
-          <ul
-          className="mt-2"
-          >
+          <ul className="mt-2">
             <li className="mt-2">Sei lidar com mudanças repentinas de rotina</li>
             <li className="mt-2">Vontade de aprender mais</li>
             <li className="mt-2">Trabalho bem em equipe</li>
             <li className="mt-2">Boa comunicação</li>
           </ul>
         </Card>
-        <Card
-        className="container d-flex flex-column align-items-center p-3 m-4"
-        style={skillsContent}
-        >
+        <Card className="container d-flex flex-column align-items-center p-3 m-4" style={skillsContent}>
           <h3>Hard Skills</h3>
 
-          <ul
-          className="mt-2"
-          >
+          <ul className="mt-2">
             <li className="mt-2">PostgreSQL</li>
             <li className="mt-2">JavaScript</li>
             <li className="mt-2">React.js</li>
@@ -178,10 +153,7 @@ export default function Home() {
         </Card>
       </Card>
 
-      <Card
-      style={devContainer}
-      className="container p-4 mt-4 mb-4"
-      >
+      <Card style={devContainer} className="container p-4 mt-4 mb-4">
         <p style={title}>Desenvolvimento</p>
 
         <div className="d-flex flex-row align-items-baseline">
@@ -221,5 +193,5 @@ export default function Home() {
         </div>
       </Card>
     </main>       
-  )
+  );
 }

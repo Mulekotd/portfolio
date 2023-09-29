@@ -1,24 +1,23 @@
-import React from 'react'
-import { Card } from 'react-bootstrap'
-import Cards from '/src/components/Cards'
+import React from 'react';
+import { Card } from 'react-bootstrap';
+import Cards from '/src/components/Cards';
 
-//static images handling
-const parrotcloud = new URL('/src/assets/images/parrotcloud.png', import.meta.url).href
-const mostra = new URL('/src/assets/images/mostra_ifrj.png', import.meta.url).href
-const calculadora = new URL('/src/assets/images/calculadora.png', import.meta.url).href
-const last = new URL('/src/assets/images/last.png', import.meta.url).href
-const crud = new URL('/src/assets/images/crud.png', import.meta.url).href
+// static images handling
+const parrotcloud = new URL('/src/assets/images/parrotcloud.png', import.meta.url).href;
+const mostra = new URL('/src/assets/images/mostra_ifrj.png', import.meta.url).href;
+const calculadora = new URL('/src/assets/images/calculadora.png', import.meta.url).href;
+const last = new URL('/src/assets/images/last.png', import.meta.url).href;
+const crud = new URL('/src/assets/images/crud.png', import.meta.url).href;
+
+const container = {
+  marginLeft: "4rem",
+  marginRight: "1rem",
+  flexDirection: "row",
+  justifyContent: "space-between",
+  border: "none"
+};
 
 export default function Projects() {
-
-  const container = {
-    marginLeft: "4rem",
-    marginRight: "1rem",
-    flexDirection: "row",
-    justifyContent: "space-between",
-    border: "none"
-  }
-
   return (
     <main
     className="mt-4"
@@ -72,5 +71,5 @@ export default function Projects() {
         </Card>
       </Card>
     </main>
-  )
+  );
 }
