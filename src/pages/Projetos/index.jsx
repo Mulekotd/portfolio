@@ -8,6 +8,7 @@ const mostra = new URL('/src/assets/images/mostra_ifrj.png', import.meta.url).hr
 const calculadora = new URL('/src/assets/images/calculadora.gif', import.meta.url).href;
 const last = new URL('/src/assets/images/last.png', import.meta.url).href;
 const crud = new URL('/src/assets/images/crud.gif', import.meta.url).href;
+const excelgraphicx = new URL('/src/assets/images/excelgraphicx.gif', import.meta.url).href;
 
 const container = {
   marginLeft: "4rem",
@@ -50,7 +51,7 @@ export default function Projects() {
           src={calculadora}
           className="col"
           href={"https://mulekotd.github.io/simple-react-calculator/"}
-          title={"React Simple Calculator"}
+          title={"Calculadora Simples em React"}
           />
 
           <Cards
@@ -66,7 +67,15 @@ export default function Projects() {
           src={crud}
           className="col"
           href={"https://github.com/Mulekotd/php-crud"}
-          title={"CRUD"}
+          title={"CRUD em PHP"}
+          />
+
+          <Cards
+          alt={"ExcelGraphicx"}
+          src={excelgraphicx}
+          className="col"
+          href={"https://github.com/Mulekotd/excel-graphicx"}
+          title={"Conversor de Arquivos Excel em Gráficos com Python"}
           />
         </Card>
       </Card>
