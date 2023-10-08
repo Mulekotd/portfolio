@@ -50,7 +50,7 @@ export default function Projects() {
           alt={"Calculadora"}
           src={calculadora}
           className="col"
-          href={"https://mulekotd.github.io/simple-react-calculator/"}
+          href={"https://mulekotd.github.io/react-calculator/"}
           title={"Calculadora Simples em React"}
           />
 
@@ -66,7 +66,7 @@ export default function Projects() {
           alt={"CRUD em PHP"}
           src={crud}
           className="col"
-          href={"https://github.com/Mulekotd/php-crud"}
+          href={"http://ec2-3-90-40-114.compute-1.amazonaws.com/"}
           title={"CRUD em PHP"}
           />
 
@@ -74,7 +74,7 @@ export default function Projects() {
           alt={"ExcelGraphicx"}
           src={excelgraphicx}
           className="col"
-          href={"https://github.com/Mulekotd/excel-graphicx"}
+          href={"http://ec2-54-80-107-167.compute-1.amazonaws.com/"}
           title={"Conversor de Arquivos Excel em Gráficos com Python"}
           />
         </Card>
