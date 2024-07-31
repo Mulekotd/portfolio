@@ -1,30 +1,31 @@
-import React from 'react';
-import { Card } from 'react-bootstrap';
-import { BsLinkedin, BsGithub } from 'react-icons/bs';
-import { AiFillInstagram } from 'react-icons/ai';
+import { Card } from "react-bootstrap";
+import { BsLinkedin, BsGithub } from "react-icons/bs";
+import { AiFillInstagram } from "react-icons/ai";
+
+import React from "react";
 
 const card = {
-  width: '100%',
-  maxWidth: '400px',
-  margin: '0 auto',
-  padding: '20px',
-  boxShadow: 'rgba(0, 0, 0, 0.1) 0px 4px 12px',
-  textAlign: 'center'
+  width: "100%",
+  maxWidth: "400px",
+  margin: "0 auto",
+  padding: "20px",
+  boxShadow: "rgba(0, 0, 0, 0.1) 0px 4px 12px",
+  textAlign: "center",
 };
 
 const title = {
-  fontWeight: 'bold',
-  fontSize: '24px',
-  textTransform: 'uppercase',
-  marginBottom: '16px'
+  fontWeight: "bold",
+  fontSize: "24px",
+  textTransform: "uppercase",
+  marginBottom: "16px",
 };
 
 const linkStyle = {
-  textDecoration: 'none',
-  color: '#007bff',
-  fontSize: '18px',
-  marginRight: '12px',
-  marginLeft: '12px'
+  textDecoration: "none",
+  color: "#007bff",
+  fontSize: "18px",
+  marginRight: "12px",
+  marginLeft: "12px",
 };
 
 export default function Contact() {

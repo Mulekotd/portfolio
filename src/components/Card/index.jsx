@@ -1,25 +1,25 @@
-import React, { useState } from 'react';
-import { Image } from 'react-bootstrap';
-import './Cards.css';
+import React, { useState } from "react";
+import { Image } from "react-bootstrap";
+import "./Card.css";
 
 const containerStyle = {
-  objectFit: 'contain',
-  background: 'none',
-  border: 'none',
-  position: 'relative',
+  objectFit: "contain",
+  background: "none",
+  border: "none",
+  position: "relative",
 };
 
 const imageStyle = {
-  height: '100%',
-  width: '100%',
+  height: "100%",
+  width: "100%",
 };
 
-const Cards = ({ alt, src, href, title }) => {
+const Card = ({ alt, src, href, title }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   const linkStyle = {
-    color: isHovered ? '#007bff' : 'inherit',
-    textDecoration: isHovered ? 'underline' : 'none',
+    color: isHovered ? "#007bff" : "inherit",
+    textDecoration: isHovered ? "underline" : "none",
   };
 
   return (
@@ -37,6 +37,6 @@ const Cards = ({ alt, src, href, title }) => {
       </a>
     </div>
   );
-}
+};
 
-export default Cards;
+export default Card;
