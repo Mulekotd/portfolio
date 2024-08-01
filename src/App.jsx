@@ -1,10 +1,9 @@
+import { Header } from "/src/components/Header";
 import "/src/styles/globals.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-import Header from "/src/components/Header";
+import React from "react";
 import Routes from "./routes";
-
-import * as React from "react";
 
 function App() {
   return (

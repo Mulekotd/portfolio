@@ -1,7 +1,7 @@
-export function getAge(birthday) {
-  var birthday = new Date("May 20, 2005 00:00:00");
-  var year = new Date().getFullYear() - birthday.getFullYear();
-  var month = new Date().getMonth() - birthday.getMonth();
+export function getAge() {
+  let birthday = new Date("May 20, 2005 00:00:00");
+  let year = new Date().getFullYear() - birthday.getFullYear();
+  let month = new Date().getMonth() - birthday.getMonth();
 
   if (month < 0 || (month === 0 && new Date().getDate() < birthday.getDate())) {
     year--;
@@ -11,25 +11,27 @@ export function getAge(birthday) {
 }
 
 export const greetingMessage = () => {
-  let h = new Date().toLocaleTimeString("pt-BR", {
+  let time = new Date().toLocaleTimeString("pt-BR", {
     hour: "numeric",
     hour12: false,
   });
 
-  if (h >= 0 && h <= 5) {
+  if (time >= 0 && time <= 5) {
     return "Boa madrugada";
-  } else if (h >= 6 && h < 12) {
+  } else if (time >= 6 && time < 12) {
     return "Bom dia";
-  } else if (h >= 12 && h < 18) {
+  } else if (time >= 12 && time < 18) {
     return "Boa tarde";
-  } else if (h >= 18 && h <= 23) {
+  } else if (time >= 18 && time <= 23) {
     return "Boa noite";
   }
 };
 
 // static images handling
-export const perfil = new URL("/src/assets/images/perfil.jpg", import.meta.url)
-  .href;
+export const profilePicture = new URL(
+  "/src/assets/images/perfil.jpg",
+  import.meta.url
+).href;
 
 export const etc1 = new URL(
   "/src/assets/images/semana_etc (1).jpg",
@@ -51,6 +53,32 @@ export const vitec2 = new URL(
   import.meta.url
 ).href;
 
+export const parrotcloud = new URL(
+  "/src/assets/images/parrotcloud.png",
+  import.meta.url
+).href;
+
+export const mostra = new URL(
+  "/src/assets/images/mostra_ifrj.png",
+  import.meta.url
+).href;
+
+export const calculator = new URL(
+  "/src/assets/images/calculadora.gif",
+  import.meta.url
+).href;
+
+export const last = new URL("/src/assets/images/last.png", import.meta.url)
+  .href;
+
+export const crud = new URL("/src/assets/images/crud.gif", import.meta.url)
+  .href;
+
+export const excelGraphicx = new URL(
+  "/src/assets/images/excelgraphicx.gif",
+  import.meta.url
+).href;
+
 // static download handling
 export const etc = new URL(
   "/src/assets/downloads/Certificado Exposição de Jogos.pdf",
@@ -61,3 +89,42 @@ export const vitec = new URL(
   "/src/assets/downloads/certificado-artigo-821610-9maoY.pdf",
   import.meta.url
 ).href;
+
+export const sites = [
+  {
+    alt: "Parrotcloud",
+    src: parrotcloud,
+    url: "https://mulekotd.github.io/store.parrotcloud/",
+    title: "Parrotcloud: Site de Publicação de Jogos",
+  },
+  {
+    alt: "Mostra IFRJ",
+    src: mostra,
+    url: "https://mostraifrjduquedecaxias.labculturadigital.com.br/",
+    title: "#Mostra IFRJ",
+  },
+  {
+    alt: "Calculadora",
+    src: calculator,
+    url: "https://mulekotd.github.io/react-calculator/",
+    title: "Calculadora",
+  },
+  {
+    alt: "Last 2",
+    src: last,
+    url: "https://app.last.app.br/dashboard/",
+    title: "Projeto LAST 2",
+  },
+  {
+    alt: "CRUD em PHP",
+    src: crud,
+    url: "http://ec2-3-90-40-114.compute-1.amazonaws.com/",
+    title: "CRUD",
+  },
+  {
+    alt: "ExcelGraphicx",
+    src: excelGraphicx,
+    url: "http://ec2-54-80-107-167.compute-1.amazonaws.com/",
+    title: "Conversor de Arquivos em Gráficos",
+  },
+];

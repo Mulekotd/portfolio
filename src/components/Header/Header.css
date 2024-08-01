@@ -1,3 +1,11 @@
+.navbar-nav {
+  flex-wrap: nowrap;
+}
+
+.navbar-collapse {
+  overflow-x: hidden;
+}
+
 .nav-link {
   text-decoration: none;
   color: #5a5a5a;

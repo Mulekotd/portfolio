@@ -1,26 +1,12 @@
+import { Spinner } from "react-bootstrap";
 import "./Loader.css";
 
-import React from "react";
-
-const Loader = () => {
+export const Loader = () => {
   return (
-    <>
-      <div className="lds-default">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-    </>
+    <div className="loader-container">
+      <Spinner animation="border" role="status">
+        <span className="visually-hidden">Loading...</span>
+      </Spinner>
+    </div>
   );
 };
-
-export default Loader;

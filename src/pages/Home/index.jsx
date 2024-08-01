@@ -1,4 +1,11 @@
-import { Card, Image, Button, Tooltip, OverlayTrigger } from "react-bootstrap";
+import {
+  Button,
+  Card,
+  Container,
+  Image,
+  OverlayTrigger,
+  Tooltip,
+} from "react-bootstrap";
 import { HiBadgeCheck } from "react-icons/hi";
 import {
   profile,
@@ -11,27 +18,35 @@ import {
   image,
   devContainer,
   devContent,
-  buttonStyle,
+  button,
 } from "./styles";
 
-import React from "react";
-import { getAge, greetingMessage } from "../../utils";
-import { perfil, etc, etc1, etc2, vitec, vitec1, vitec2 } from "../../utils";
+import {
+  getAge,
+  greetingMessage,
+  profilePicture,
+  etc,
+  etc1,
+  etc2,
+  vitec,
+  vitec1,
+  vitec2,
+} from "/src/utils";
 
 export default function Home() {
   return (
-    <Card
+    <Container
       as="main"
       className="d-flex flex-column gap-5 p-4"
       id="canvas_container"
     >
-      <Card
-        className="container bd-highlight d-flex flex-row align-items-center gap-4"
-        style={container}
-      >
-        <Card style={profile}>
-          <Image alt="perfil" src={perfil} style={profileImage} />
-        </Card>
+      <section className="container bd-highlight d-flex flex-row align-items-center gap-4">
+        <div
+          className="d-flex align-items-center justify-content-center"
+          style={profile}
+        >
+          <Image alt="perfil" src={profilePicture} style={profileImage} />
+        </div>
         <Card className="d-flex flex-collumn p-4" style={content}>
           <h2 style={title}>Sobre Mim</h2>
           <p>
@@ -40,15 +55,18 @@ export default function Home() {
             Full-Stack.
           </p>
           <h2 style={title}>Resumo</h2>
-          <p>
+          <p className="mb-0">
             Natural de São Gonçalo sempre fui interessado na área de TI. Para
             alcança os meus objetivos, em 2020 ingressei no Instituto Federal do
             Rio de Janeiro - Campus Niterói, onde finalizei o curso Técnico em
             Informática no começo do ano de 2023.
           </p>
         </Card>
-      </Card>
-      <Card className="container d-flex flex-row gap-4" style={skillsContainer}>
+      </section>
+      <section
+        className="container d-flex flex-row gap-4"
+        style={skillsContainer}
+      >
         <Card
           className="container d-flex flex-column align-items-center p-3"
           style={skillsContent}
@@ -75,12 +93,9 @@ export default function Home() {
             <li>PHP</li>
           </ul>
         </Card>
-      </Card>
-      <Card
-        style={devContainer}
-        className="container d-flex flex-column gap-2 p-4"
-      >
-        <Card className="d-flex flex-column gap-2" style={container}>
+      </section>
+      <Card style={devContainer} className="container d-flex flex-column p-4">
+        <Card className="d-flex flex-column" style={container}>
           <p style={title}>Desenvolvimento</p>
           <div className="d-flex flex-row align-items-start gap-2">
             <h5>Semana de Educação, Tecnologia, Ciência e Cultura</h5>
@@ -88,19 +103,19 @@ export default function Home() {
               placement="right"
               overlay={<Tooltip id="tooltip">Baixar Certificação</Tooltip>}
             >
-              <Button href={etc} download style={buttonStyle}>
+              <Button href={etc} download style={button}>
                 <HiBadgeCheck color="green" size={18} />
               </Button>
             </OverlayTrigger>
           </div>
-          <p>
+          <p className="m-0">
             Dentro do IFRJ, participei de eventos que moldaram de diversas
             maneiras meu caráter sendo um desses a semana ETC onde desempenhei o
             papel de palestrante e monitor de uma sala temática, aberta ao
             público externo, de jogos desenvolvidos no âmbito da instituição.
           </p>
           <div
-            className="container d-flex flex-start justify-content-between p-0"
+            className="container d-flex flex-start justify-content-between my-4 p-0"
             style={devContent}
           >
             <Image alt="etc1" src={etc1} style={image} />
@@ -114,12 +129,12 @@ export default function Home() {
               placement="right"
               overlay={<Tooltip id="tooltip">Baixar Certificação</Tooltip>}
             >
-              <Button href={vitec} download style={buttonStyle}>
+              <Button href={vitec} download style={button}>
                 <HiBadgeCheck color="green" size={18} />
               </Button>
             </OverlayTrigger>
           </div>
-          <p>
+          <p className="m-0">
             Além do acontecimento citado anteriormente, participei também da
             apresentação do projeto de extensão Vitrines Tecnológicas, cujo
             atuei durante 2022. Essa é uma plataforma web contendo um portfólio
@@ -129,7 +144,7 @@ export default function Home() {
             financiamentos.
           </p>
           <div
-            className="container d-flex flex-start justify-content-between p-0"
+            className="container d-flex flex-start justify-content-between mt-4 p-0"
             style={devContent}
           >
             <Image alt="vitec1" src={vitec1} style={image} />
@@ -137,6 +152,6 @@ export default function Home() {
           </div>
         </Card>
       </Card>
-    </Card>
+    </Container>
   );
 }

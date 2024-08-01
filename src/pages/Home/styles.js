@@ -1,11 +1,8 @@
 export const profile = {
-  width: "200px",
-  height: "180px",
+  width: "180px",
+  height: "160px",
   borderRadius: "50%",
   overflow: "hidden",
-  display: "flex",
-  justifyContent: "center",
-  alignItems: "center",
 };
 
 export const profileImage = {
@@ -41,9 +38,6 @@ export const skillsContent = {
   width: "45vw",
   boxShadow:
     "rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px",
-  display: "flex",
-  flexDirection: "column",
-  gap: 2,
 };
 
 export const image = {
@@ -61,7 +55,7 @@ export const devContent = {
   height: "auto",
 };
 
-export const buttonStyle = {
+export const button = {
   background: "none",
   border: "none",
   padding: 0,
