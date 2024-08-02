@@ -8,6 +8,7 @@ export const card = {
 };
 
 export const container = {
+  minHeight: "calc(100dvh - 56px)",
   border: "none",
 };
 

@@ -1,14 +1,18 @@
 export const profile = {
   width: "180px",
-  height: "160px",
+  height: "180px",
   borderRadius: "50%",
   overflow: "hidden",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
 };
 
 export const profileImage = {
   width: "100%",
   height: "100%",
   objectFit: "cover",
+  borderRadius: "50%",
 };
 
 export const title = {
@@ -23,8 +27,8 @@ export const container = {
 
 export const content = {
   width: "100%",
-  objectFit: "cover",
   border: "none",
+  backgroundColor: "#f3f5f7",
 };
 
 export const skillsContainer = {
@@ -36,8 +40,7 @@ export const skillsContainer = {
 export const skillsContent = {
   height: "100%",
   width: "45vw",
-  boxShadow:
-    "rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px",
+  boxShadow: "rgba(0, 0, 0, 0.15) 0px 3px 3px 0px",
 };
 
 export const image = {
