@@ -63,15 +63,7 @@ export const mostra = new URL(
   import.meta.url
 ).href;
 
-export const calculator = new URL(
-  "/src/assets/images/calculadora.gif",
-  import.meta.url
-).href;
-
 export const last = new URL("/src/assets/images/last.png", import.meta.url)
-  .href;
-
-export const crud = new URL("/src/assets/images/crud.gif", import.meta.url)
   .href;
 
 export const excelGraphicx = new URL(
@@ -104,27 +96,15 @@ export const sites = [
     title: "#Mostra IFRJ",
   },
   {
-    alt: "Calculadora",
-    src: calculator,
-    url: "https://mulekotd.github.io/react-calculator/",
-    title: "Calculadora",
-  },
-  {
     alt: "Last 2",
     src: last,
     url: "https://app.last.app.br/dashboard/",
     title: "Projeto LAST 2",
   },
   {
-    alt: "CRUD em PHP",
-    src: crud,
-    url: "http://ec2-3-90-40-114.compute-1.amazonaws.com/",
-    title: "CRUD",
-  },
-  {
     alt: "ExcelGraphicx",
     src: excelGraphicx,
-    url: "http://ec2-54-80-107-167.compute-1.amazonaws.com/",
+    url: "http://ec2-3-89-199-188.compute-1.amazonaws.com/",
     title: "Conversor de Arquivos em Gráficos",
   },
 ];

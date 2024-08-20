@@ -1,5 +1,6 @@
 import { Card } from "react-bootstrap";
 import { skillsContent } from "../../styles";
+
 import { useState, useRef, useEffect } from "react";
 
 const SkillsCard = ({ title, skills }) => {
