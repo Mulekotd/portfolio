@@ -116,7 +116,7 @@ export default function Home() {
             público externo, de jogos desenvolvidos no âmbito da instituição.
           </p>
           <div
-            className="container d-flex flex-start justify-content-between my-4 p-0"
+            className="container d-flex flex-column flex-md-row justify-content-between gap-4 my-4 p-0"
             style={devContent}
           >
             <Image alt="etc1" src={etc1} style={image} />
@@ -145,7 +145,7 @@ export default function Home() {
             financiamentos.
           </p>
           <div
-            className="container d-flex flex-start justify-content-between mt-4 p-0"
+            className="container d-flex flex-column flex-md-row justify-content-between gap-4 my-4 p-0"
             style={devContent}
           >
             <Image alt="vitec1" src={vitec1} style={image} />

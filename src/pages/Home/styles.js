@@ -45,7 +45,7 @@ export const skillsContent = {
 
 export const image = {
   height: "250px",
-  width: "45%",
+  width: "100%",
   objectFit: "cover",
 };
 
