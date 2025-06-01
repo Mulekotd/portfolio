@@ -1,16 +1,17 @@
 import { Header } from "/src/components/Header";
-import "/src/styles/globals.css";
-import "bootstrap/dist/css/bootstrap.min.css";
+import { Loader } from "/src/components/Loader";
 
-import React from "react";
-import Routes from "./routes";
+import Routes from "/src/Routes";
+import { Fragment, Suspense } from "react";
 
 function App() {
   return (
-    <React.Fragment>
+    <Fragment>
       <Header />
-      <Routes />
-    </React.Fragment>
+      <Suspense fallback={<Loader />}>
+        <Routes />
+      </Suspense>
+    </Fragment>
   );
 }
 

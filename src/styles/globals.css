@@ -13,13 +13,60 @@ html {
   font: normal bold 16px "Monoton", sans-serif;
 }
 
-.sub-skills {
-  height: 0;
-  overflow: hidden;
-  transition: height 0.2s ease-out;
+/* Bootstrap classes overrides */
+
+.button {
+  background: none !important;
+  border: none !important;
+  padding: 0 !important;
+  cursor: pointer !important;
 }
 
-.sub-skills-show {
-  height: fit-content;
-  transition: height 0.4s ease-in;
+.container {
+  border: none !important;
+}
+
+/* Custom classes */
+
+.project-card {
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.project-card:hover {
+  box-shadow: rgba(0, 0, 0, 0.8) 0px 30px 90px;
+  transform: scale(1.0125);
+}
+
+.project-card-link {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.2s, text-decoration 0.2s;
+}
+
+.project-card-link:hover {
+  color: #0063cd;
+  text-decoration: underline;
+}
+
+.link {
+  color: #0063cd; 
+  font-size: 18px;
+}
+
+.sub-skills {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.8s ease-in;
+}
+
+.sub-skills.show {
+  max-height: 500px;
+  opacity: 1;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 24px;
 }
