@@ -16,9 +16,9 @@ export const greetingMessage = () => {
     hour12: false,
   });
 
-  if (time >= 0 && time <= 5) {
+  if (time >= 0 && time <= 3) {
     return "Boa madrugada";
-  } else if (time >= 6 && time < 12) {
+  } else if (time >= 4 && time < 12) {
     return "Bom dia";
   } else if (time >= 12 && time < 18) {
     return "Boa tarde";
@@ -27,52 +27,47 @@ export const greetingMessage = () => {
   }
 };
 
-// static images handling
+// static images handlingq
 export const profilePicture = new URL(
-  "/src/assets/images/perfil.jpg",
+  "/src/assets/images/perfil.webp",
   import.meta.url
 ).href;
 
 export const etc1 = new URL(
-  "/src/assets/images/semana_etc (1).jpg",
+  "/src/assets/images/semana_etc_1.webp",
   import.meta.url
 ).href;
 
 export const etc2 = new URL(
-  "/src/assets/images/semana_etc (2).jpg",
+  "/src/assets/images/semana_etc_2.webp",
   import.meta.url
 ).href;
 
 export const vitec1 = new URL(
-  "/src/assets/images/vitrines_tec (1).jpg",
+  "/src/assets/images/vitrines_tec_1.webp",
   import.meta.url
 ).href;
 
 export const vitec2 = new URL(
-  "/src/assets/images/vitrines_tec (2).jpg",
+  "/src/assets/images/vitrines_tec_2.webp",
   import.meta.url
 ).href;
 
 export const parrotcloud = new URL(
-  "/src/assets/images/parrotcloud.png",
+  "/src/assets/images/parrotcloud.webp",
   import.meta.url
 ).href;
 
 export const mostra = new URL(
-  "/src/assets/images/mostra_ifrj.png",
+  "/src/assets/images/mostra_ifrj.webp",
   import.meta.url
 ).href;
 
-export const last = new URL("/src/assets/images/last.png", import.meta.url)
+export const last = new URL("/src/assets/images/last.webp", import.meta.url)
   .href;
 
-export const excelGraphicx = new URL(
-  "/src/assets/images/excelgraphicx.gif",
-  import.meta.url
-).href;
-
 export const selos = new URL(
-  "/src/assets/images/selos-agro.png",
+  "/src/assets/images/selos-agro.webp",
   import.meta.url
 ).href;
 
@@ -140,13 +135,5 @@ export const sites = [
     },
     url: "https://www-dev.selosdoagro.com/",
     title: "Selos do Agro"
-  },
-  {
-    image: {
-      alt: "ExcelGraphicx",
-      src: excelGraphicx,
-    },
-    url: "http://ec2-3-89-199-188.compute-1.amazonaws.com/",
-    title: "Conversor de Arquivos em Gráficos"
-  },
+  }
 ];
