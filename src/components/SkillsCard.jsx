@@ -5,7 +5,7 @@ const SkillInfo = ({ title = '', skills = [{ name: '', subSkills: [] }] }) => {
   const [hoveredSkill, setHoveredSkill] = useState(null);
 
   return (
-    <Card className="container shadow-sm d-flex flex-column align-items-center p-3 h-100 vw-45">
+    <Card className="container shadow-lg d-flex flex-column align-items-center p-3 h-100 vw-45">
       <h3>{title}</h3>
       <ul className="d-flex flex-column gap-2">
         {skills.map(({ name, subSkills = [] }, index) => (

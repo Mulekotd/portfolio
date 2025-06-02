@@ -27,7 +27,7 @@ export const SocialMedias = () => {
     return (
         <Fragment>
             <p className="title text-uppercase">Redes Sociais</p>
-            <div className="d-flex justify-content-center gap-3">
+            <div className="d-flex justify-content-center gap-3 overflow-hidden">
                 {socialLinks.map(({ ariaLabel, title, icon: Icon, href }) => (
                     <a
                         key={title}

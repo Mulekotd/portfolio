@@ -15,8 +15,18 @@ const DevelopmentInfo = ({ title = '', description = '', href = '', images = [{ 
                 </OverlayTrigger>
             </div>
             <p className="m-0">{description}</p>
-            <div className="container d-flex flex-column flex-md-row justify-content-between gap-4 my-4 p-0 h-auto">
-                {images.map(({ alt, src }) => (<Image alt={alt} src={src} key={alt} className="w-100" height="250px" />))}
+
+            <div className="d-flex flex-column flex-md-row justify-content-between gap-4 my-4 p-0 h-auto w-100 overflow-hidden">
+                {images.map(({ alt, src }) => (
+                    <Image
+                        alt={alt}
+                        src={src}
+                        key={alt}
+                        className="w-100"
+                        height="250px"
+                        style={{ objectFit: 'cover', flex: '1 1 0' }}
+                    />
+                ))}
             </div>
         </Card>
     );
@@ -24,7 +34,7 @@ const DevelopmentInfo = ({ title = '', description = '', href = '', images = [{ 
 
 export const DevelopmentCard = () => {
     return (
-        <Card className="container d-flex flex-column p-4 h-auto">
+        <Card className="container shadow-lg d-flex flex-column p-4 h-auto">
             {developmentInfo.map((item) => (
                 <DevelopmentInfo
                     key={item.title}
