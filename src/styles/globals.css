@@ -50,7 +50,7 @@ html {
 }
 
 .link {
-  color: #0063cd; 
+  color: #0063cd;
   font-size: 18px;
 }
 
@@ -58,12 +58,12 @@ html {
   max-height: 0;
   opacity: 0;
   overflow: hidden;
-  transition: max-height 0.8s ease-in;
 }
 
 .sub-skills.show {
   max-height: 500px;
   opacity: 1;
+  transition: max-height 0.8s ease-in, opacity 0.4s ease-in;
 }
 
 .title {
