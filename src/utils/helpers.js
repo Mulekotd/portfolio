@@ -10,24 +10,31 @@ export function getAge() {
   return year;
 }
 
-export const greetingMessage = () => {
-  let time = new Date().toLocaleTimeString("pt-BR", {
-    hour: "numeric",
-    hour12: false,
-  });
+export const greetingMessage = (language = "pt-BR") => {
+  const normalizedLanguage = language === "en" ? "en-US" : language;
+  let hour = Number(
+    new Date().toLocaleTimeString(normalizedLanguage, {
+      hour: "numeric",
+      hour12: false,
+    })
+  );
 
-  if (time >= 0 && time <= 3) {
-    return "Boa madrugada";
-  } else if (time >= 4 && time < 12) {
-    return "Bom dia";
-  } else if (time >= 12 && time < 18) {
-    return "Boa tarde";
-  } else if (time >= 18 && time <= 23) {
-    return "Boa noite";
+  if (hour >= 0 && hour <= 3) {
+    return normalizedLanguage === "en-US" ? "Good early morning" : "Boa madrugada";
+  } else if (hour >= 4 && hour < 12) {
+    return normalizedLanguage === "en-US" ? "Good morning" : "Bom dia";
+  } else if (hour >= 12 && hour < 18) {
+    return normalizedLanguage === "en-US" ? "Good afternoon" : "Boa tarde";
   }
+
+  if (hour >= 18 && hour <= 23) {
+    return normalizedLanguage === "en-US" ? "Good evening" : "Boa noite";
+  }
+
+  return normalizedLanguage === "en-US" ? "Hello" : "Ola";
 };
 
-// static images handlingq
+// Static images handling.
 export const profilePicture = new URL(
   "/src/assets/images/perfil.webp",
   import.meta.url
@@ -53,8 +60,8 @@ export const vitec2 = new URL(
   import.meta.url
 ).href;
 
-export const parrotcloud = new URL(
-  "/src/assets/images/parrotcloud.webp",
+export const ember_chat = new URL(
+  "/src/assets/images/emberchat.webp",
   import.meta.url
 ).href;
 
@@ -84,8 +91,8 @@ export const vitec = new URL(
 
 export const developmentInfo = [
   {
-      title: "Semana de Educação, Tecnologia, Ciência e Cultura",
-      description: "Dentro do IFRJ, participei de eventos que moldaram de diversas maneiras meu caráter sendo um desses a semana ETC onde desempenhei o papel de palestrante e monitor de uma sala temática, aberta ao público externo, de jogos desenvolvidos no âmbito da instituição.",
+      titleKey: "development.etcTitle",
+      descriptionKey: "development.etcDescription",
       href: etc,
       images: [
           { alt: "etc1", src: etc1 },
@@ -93,8 +100,8 @@ export const developmentInfo = [
       ]
   },
   {
-      title: "#Mostra IFRJ",
-      description: "Além do acontecimento citado anteriormente, participei também da apresentação do projeto de extensão Vitrines Tecnológicas, cujo atuei durante 2022. Essa é uma plataforma web contendo um portfólio de produtos e serviços panteados resultantes de projetos de pesquisa e inovação. Essa Vitrine visa promover a visibilidade perante o público interno e externo da instituição, bem como obter parcerias e financiamentos.",
+      titleKey: "development.mostraTitle",
+      descriptionKey: "development.mostraDescription",
       href: vitec,
       images: [
           { alt: "vitec1", src: vitec1 },
@@ -106,11 +113,11 @@ export const developmentInfo = [
 export const sites = [
   {
     image: {
-      alt: "Parrotcloud",
-      src: parrotcloud,
+      alt: "Ember Chat",
+      src: ember_chat,
     },
-    url: "https://mulekotd.github.io/store.parrotcloud/",
-    title: "Parrotcloud: Site de Publicação de Jogos"
+    url: "https://emberchat.app",
+    title: "Ember Chat - Bate Papo Temporario"
   },
   {
     image: {

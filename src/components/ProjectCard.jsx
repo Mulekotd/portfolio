@@ -1,19 +1,32 @@
 import { Card, Image } from "react-bootstrap";
+import { useTranslation } from "react-i18next";
+import Tilt from "react-parallax-tilt";
+import { motion } from "framer-motion";
 
 export const ProjectCard = ({ image = { alt: '', src: '' }, title, url }) => {
+  const { t } = useTranslation();
+
   return (
-    <Card className="project-card border border-black border-1 rounded d-flex flex-column align-items-center overflow-hidden w-100 h-auto">
-      <div
-        className="border-0 position-relative object-fit-contain w-100"
-        style={{
-          height: "260px",
-          backdropFilter: "blur(6.5px)",
-          WebkitBackdropFilter: "blur(6.5px)"
-        }}
-      >
-        <Image className="h-100 w-100" alt={image.alt} src={image.src} />
-      </div>
-      <a className="project-card-link" href={url}>{title}</a>
-    </Card>
+    <Tilt tiltMaxAngleX={7} tiltMaxAngleY={7} scale={1.01} glareEnable glareMaxOpacity={0.12}>
+      <motion.div whileHover={{ y: -6 }} transition={{ type: "spring", stiffness: 180, damping: 16 }}>
+        <Card className="project-card rounded d-flex flex-column align-items-center overflow-hidden w-100 h-100">
+          <div className="project-card-image-wrap">
+            <Image
+              className="project-card-image"
+              alt={image.alt}
+              src={image.src}
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <div className="project-card-body">
+            <p className="project-card-title mb-1">{title}</p>
+            <a className="project-card-link" href={url} target="_blank" rel="noreferrer">
+              {t("projects.viewProject")}
+            </a>
+          </div>
+        </Card>
+      </motion.div>
+    </Tilt>
   );
 };

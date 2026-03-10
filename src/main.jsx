@@ -2,6 +2,7 @@ import { HashRouter } from "react-router-dom";
 import ReactDOM from "react-dom/client";
 
 import App from "./App";
+import "./i18n";
 import "/src/styles/globals.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 

@@ -1,38 +1,38 @@
 import { FaEnvelope, FaPhone } from 'react-icons/fa';
 import { Card, Container } from "react-bootstrap";
+import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import { SocialMedias } from "/src/components/SocialMedias";
 
 export default function Contact() {
+  const { t } = useTranslation();
   const email = "joaopedro.gama0675@gmail.com";
   const phoneNumber = "+55 (21) 97138-9552";
 
   return (
     <Container
       as="main"
-      className="p-4"
-      style={{ minHeight: "calc(100dvh - 56px)" }}
+      className="main-shell contact-layout"
+      style={{ minHeight: "calc(100dvh - 78px)" }}
     >
-      <Card
-        className="text-center my-0 mx-auto w-100"
-        style={{
-          maxWidth: "460px",
-          padding: "20px",
-          boxShadow: "rgba(0, 0, 0, 0.1) 0px 4px 12px"
-        }}
+      <motion.div
+        initial={{ opacity: 0, scale: 0.96, y: 10 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
+        transition={{ duration: 0.42 }}
+        className="w-100"
       >
-        <p className="mb-3 title text-uppercase">
-          Informações de Contato
-        </p>
+        <Card className="glass-card text-center my-0 mx-auto w-100 contact-card">
+          <p className="mb-3 title text-uppercase">{t("contact.title")}</p>
 
-        <div className="d-flex flex-column gap-1 align-items-center w-auto">
-          <div className="d-flex flex-row align-items-center"><FaEnvelope className="me-2" /> <span>{email}</span></div>
-          <div className="d-flex flex-row align-items-center"><FaPhone className="me-2" /> <span>{phoneNumber}</span></div>
-        </div>
+          <div className="d-flex flex-column gap-2 align-items-center w-auto">
+            <div className="contact-row"><FaEnvelope className="me-2" /> <span>{email}</span></div>
+            <div className="contact-row"><FaPhone className="me-2" /> <span>{phoneNumber}</span></div>
+          </div>
 
-        <hr className="my-4" />
-        
-        <SocialMedias />
-      </Card>
+          <hr className="my-4" />
+          <SocialMedias />
+        </Card>
+      </motion.div>
     </Container>
   );
 }

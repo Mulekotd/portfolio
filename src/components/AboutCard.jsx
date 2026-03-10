@@ -1,27 +1,46 @@
-import { Card, Image } from "react-bootstrap";
+import { Card } from "react-bootstrap";
+import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
-import { useMediaQuery } from "react-responsive";
 import { getAge, greetingMessage, profilePicture } from "/src/utils/helpers.js";
 
 export const AboutCard = () => {
-    const isSmallScreen = useMediaQuery({ query: "(max-width: 576px)" });
+    const { t, i18n } = useTranslation();
+    const language = i18n.resolvedLanguage || i18n.language;
 
     return (
-        <div className="container bd-highlight d-flex flex-column flex-md-row align-items-center gap-4">
-            <div
-                className="d-flex align-items-center justify-content-center overflow-hidden"
-                style={{ width: "180px", height: isSmallScreen ? "180px" : "160px" }}
-            >
-                <Image className="rounded-circle object-fit-cover w-100 h-100" alt="perfil" src={profilePicture} />
-            </div>
+        <motion.section
+            className="about-grid"
+            initial={{ opacity: 0, y: 22 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+        >
+            <motion.div className="avatar-shell" whileHover={{ rotate: 1.5, scale: 1.03 }}>
+                <img
+                    className="rounded-circle object-fit-cover w-100 h-100"
+                    alt="Foto de perfil de João Pedro"
+                    src={profilePicture}
+                    loading="eager"
+                    fetchpriority="high"
+                />
+            </motion.div>
 
-            <Card className="container d-flex flex-column p-4 w-100" style={{ backgroundColor: "#f3f5f7" }}>
-                <h2 className="title text-uppercase">Sobre Mim</h2>
-                <p>{greetingMessage()}, eu me chamo João Pedro Silverio Gama tenho {getAge()} anos e possuo experiência em Desenvolvimento Web Full-Stack.</p>
+            <Card className="glass-card about-card">
+                <h2 className="title text-uppercase">{t("home.aboutTitle")}</h2>
+                <p>
+                    {t("home.aboutDescription", {
+                        greeting: greetingMessage(language),
+                        age: getAge()
+                    })}
+                </p>
 
-                <h2 className="title text-uppercase">Resumo</h2>
-                <p className="mb-0">Natural de São Gonçalo sempre fui interessado na área de TI. Para alcançar os meus objetivos, em 2020 ingressei no Instituto Federal do Rio de Janeiro - Campus Niterói, onde finalizei o curso Técnico em Informática no começo do ano de 2023.</p>
+                <h2 className="title text-uppercase">{t("home.summaryTitle")}</h2>
+                {t("home.summaryDescription").split("\n\n").map((paragraph, i, arr) => (
+                    <p key={i} className={i === arr.length - 1 ? "mb-0" : undefined}>
+                        {paragraph}
+                    </p>
+                ))}
             </Card>
-        </div>
+        </motion.section>
     );
 };
