@@ -27,13 +27,7 @@ export const AboutCard = () => {
 
             <Card className="glass-card about-card">
                 <h2 className="title text-uppercase">{t("home.aboutTitle")}</h2>
-                <p>
-                    {t("home.aboutDescription", {
-                        greeting: greetingMessage(language),
-                        age: getAge()
-                    })}
-                </p>
-
+                <p>{t("home.aboutDescription", { greeting: greetingMessage(language) })}</p>
                 <h2 className="title text-uppercase">{t("home.summaryTitle")}</h2>
                 {t("home.summaryDescription").split("\n\n").map((paragraph, i, arr) => (
                     <p key={i} className={i === arr.length - 1 ? "mb-0" : undefined}>
