@@ -30,6 +30,7 @@ export default function Contact() {
           </div>
 
           <hr className="my-4" />
+
           <SocialMedias />
         </Card>
       </motion.div>
