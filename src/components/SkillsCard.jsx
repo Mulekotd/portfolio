@@ -1,6 +1,8 @@
-import { Card, Dropdown } from "react-bootstrap";
+import { Card } from "react-bootstrap";
+
+import { AnimatePresence, motion } from "framer-motion";
+
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import { useTranslation } from "react-i18next";
 
 const subSkillVariants = {
@@ -27,18 +29,7 @@ const SkillInfo = ({ title = '', skills = [{ name: '', subSkills: [] }] }) => {
             onClick={() => subSkills.length > 0 && toggle(name)}
             style={subSkills.length > 0 ? { cursor: "pointer" } : undefined}
           >
-            <span className="d-flex align-items-center gap-1">
-              {name}
-              {subSkills.length > 0 && (
-                <motion.span
-                  animate={{ rotate: expandedSkill === name ? 90 : 0 }}
-                  transition={{ duration: 0.2 }}
-                  style={{ color: "black", display: "inline-block", fontSize: "0.7em" }}
-                >
-                  &#5125;
-                </motion.span>
-              )}
-            </span>
+            <span className="d-flex align-items-center gap-1">{name}</span>
             <AnimatePresence initial={false}>
               {subSkills.length > 0 && expandedSkill === name && (
                 <motion.ul
@@ -50,9 +41,7 @@ const SkillInfo = ({ title = '', skills = [{ name: '', subSkills: [] }] }) => {
                   exit="exit"
                 >
                   {subSkills.map((subSkill, idx) => (
-                    <li style={{ cursor: "default" }} key={idx}>
-                      {subSkill}
-                    </li>
+                    <li style={{ cursor: "default" }} key={idx}>{subSkill}</li>
                   ))}
                 </motion.ul>
               )}

@@ -1,17 +1,6 @@
-export function getAge() {
-  let birthday = new Date("May 20, 2005 00:00:00");
-  let year = new Date().getFullYear() - birthday.getFullYear();
-  let month = new Date().getMonth() - birthday.getMonth();
-
-  if (month < 0 || (month === 0 && new Date().getDate() < birthday.getDate())) {
-    year--;
-  }
-
-  return year;
-}
-
 export const greetingMessage = (language = "pt-BR") => {
   const normalizedLanguage = language === "en" ? "en-US" : language;
+
   let hour = Number(
     new Date().toLocaleTimeString(normalizedLanguage, {
       hour: "numeric",
@@ -114,7 +103,7 @@ export const sites = [
   {
     image: {
       alt: "Ember Chat",
-      src: ember_chat,
+      src: ember_chat
     },
     url: "https://emberchat.app",
     title: "Ember Chat - Bate Papo Temporario"
@@ -122,7 +111,7 @@ export const sites = [
   {
     image: {
       alt: "Mostra IFRJ",
-      src: mostra,
+      src: mostra
     },
     url: "https://mostraifrjduquedecaxias.labculturadigital.com.br/",
     title: "#Mostra IFRJ"
@@ -130,7 +119,7 @@ export const sites = [
   {
     image: {
       alt: "Last 2",
-      src: last,
+      src: last
     },
     url: "https://app.last.app.br/dashboard/",
     title: "Projeto LAST 2"
@@ -138,7 +127,7 @@ export const sites = [
   {
     image: {
       alt: "Selos do Agro",
-      src: selos,
+      src: selos
     },
     url: "https://www-dev.selosdoagro.com/",
     title: "Selos do Agro"

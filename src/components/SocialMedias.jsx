@@ -1,6 +1,7 @@
-import { Fragment } from "react";
 import { AiFillInstagram } from "react-icons/ai";
 import { BsLinkedin, BsGithub } from "react-icons/bs";
+
+import { Fragment } from "react";
 import { useTranslation } from "react-i18next";
 
 export const SocialMedias = () => {
@@ -11,20 +12,20 @@ export const SocialMedias = () => {
             ariaLabel: "Siga-me no Instagram",
             title: t("social.instagram"),
             icon: AiFillInstagram,
-            href: "https://www.instagram.com/mulekotd/",
+            href: "https://www.instagram.com/mulekotd/"
         },
         {
             ariaLabel: "Conecte-se comigo no LinkedIn",
             title: t("social.linkedin"),
             icon: BsLinkedin,
-            href: "https://www.linkedin.com/in/mulekotd/",
+            href: "https://www.linkedin.com/in/mulekotd/"
         },
         {
             ariaLabel: "Veja meu GitHub",
             title: t("social.github"),
             icon: BsGithub,
-            href: "https://github.com/Mulekotd",
-        },
+            href: "https://github.com/Mulekotd"
+        }
     ];
 
     return (

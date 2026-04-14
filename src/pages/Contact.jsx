@@ -1,11 +1,16 @@
 import { FaEnvelope, FaPhone } from 'react-icons/fa';
+
 import { Card, Container } from "react-bootstrap";
-import { motion } from "framer-motion";
-import { useTranslation } from "react-i18next";
+
 import { SocialMedias } from "/src/components/SocialMedias";
+
+import { motion } from "framer-motion";
+
+import { useTranslation } from "react-i18next";
 
 export default function Contact() {
   const { t } = useTranslation();
+  
   const email = "joaopedro.gama0675@gmail.com";
   const phoneNumber = "+55 (21) 97138-9552";
 

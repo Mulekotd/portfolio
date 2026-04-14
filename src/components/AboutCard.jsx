@@ -1,11 +1,14 @@
 import { Card } from "react-bootstrap";
+
 import { motion } from "framer-motion";
+
 import { useTranslation } from "react-i18next";
 
-import { getAge, greetingMessage, profilePicture } from "/src/utils/helpers.js";
+import { greetingMessage, profilePicture } from "/src/utils/helpers.js";
 
 export const AboutCard = () => {
     const { t, i18n } = useTranslation();
+    
     const language = i18n.resolvedLanguage || i18n.language;
 
     return (

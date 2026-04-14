@@ -1,7 +1,10 @@
 import { Card, Image } from "react-bootstrap";
-import { useTranslation } from "react-i18next";
-import Tilt from "react-parallax-tilt";
+
 import { motion } from "framer-motion";
+
+import Tilt from "react-parallax-tilt";
+
+import { useTranslation } from "react-i18next";
 
 export const ProjectCard = ({ image = { alt: '', src: '' }, title, url }) => {
   const { t } = useTranslation();

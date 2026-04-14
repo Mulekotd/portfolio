@@ -1,9 +1,10 @@
 import { Container } from "react-bootstrap";
-import { motion } from "framer-motion";
 
 import { AboutCard } from "/src/components/AboutCard";
 import { DevelopmentCard } from "/src/components/DevelopmentCard";
 import { SkillsCard } from "/src/components/SkillsCard";
+
+import { motion } from "framer-motion";
 
 export default function Home() {
   return (

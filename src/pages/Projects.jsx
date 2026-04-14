@@ -1,7 +1,10 @@
 import { Container, Row, Col } from "react-bootstrap";
-import { motion } from "framer-motion";
-import { useTranslation } from "react-i18next";
+
 import { ProjectCard } from "/src/components/ProjectCard";
+
+import { motion } from "framer-motion";
+
+import { useTranslation } from "react-i18next";
 
 import { sites } from "/src/utils/helpers.js";
 

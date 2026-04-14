@@ -1,11 +1,14 @@
 import { Nav, Navbar } from "react-bootstrap";
-import { Link, useLocation } from "react-router-dom";
+
 import { motion } from "framer-motion";
+
+import { Link, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 export const Header = () => {
-  const location = useLocation();
   const { t, i18n } = useTranslation();
+  
+  const location = useLocation();
 
   const currentLanguage = i18n.resolvedLanguage || i18n.language;
   const normalizedCurrentLanguage = currentLanguage === "en" ? "en-US" : currentLanguage;
@@ -13,7 +16,7 @@ export const Header = () => {
   const navLinks = [
     { label: t("common.navHome"), to: "/" },
     { label: t("common.navProjects"), to: "/projects" },
-    { label: t("common.navContact"), to: "/contact" },
+    { label: t("common.navContact"), to: "/contact" }
   ];
 
   return (

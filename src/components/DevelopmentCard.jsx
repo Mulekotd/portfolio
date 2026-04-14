@@ -1,6 +1,9 @@
-import { Button, Card, Image, OverlayTrigger, Tooltip } from "react-bootstrap";
 import { HiBadgeCheck } from "react-icons/hi";
+
+import { Button, Card, Image, OverlayTrigger, Tooltip } from "react-bootstrap";
+
 import { motion } from "framer-motion";
+
 import { useTranslation } from "react-i18next";
 
 import { developmentInfo } from "/src/utils/helpers.js";
@@ -18,6 +21,7 @@ const DevelopmentInfo = ({ title = "", description = "", href = "", images = [{ 
                     </Button>
                 </OverlayTrigger>
             </div>
+
             <p className="m-0">{description}</p>
 
             <div className="development-images">
