@@ -9,12 +9,6 @@ export const SocialMedias = () => {
 
     const socialLinks = [
         {
-            ariaLabel: "Siga-me no Instagram",
-            title: t("social.instagram"),
-            icon: AiFillInstagram,
-            href: "https://www.instagram.com/mulekotd/"
-        },
-        {
             ariaLabel: "Conecte-se comigo no LinkedIn",
             title: t("social.linkedin"),
             icon: BsLinkedin,

@@ -70,10 +70,10 @@ export const SkillsCard = () => {
       title: t("home.hardSkills"),
       skills: [
         { name: "Mobile", subSkills: ["React Native"] },
-        { name: "Frontend", subSkills: ["NextJS / ReactJS", "Redux", "Yup / Zod", "TailwindCSS / Bootstrap", "MUI / Shadcn"] },
+        { name: "Frontend", subSkills: ["NextJS / ReactJS", "Redux / Zustand / Jotai", "Yup / Zod", "TailwindCSS / Bootstrap", "MUI / Shadcn"] },
         { name: "Backend", subSkills: ["Express / Fastify / NestJS", "Drizzle / Prisma", "Go"] },
         { name: "Databases", subSkills: ["PostgreSQL / MySQL", "Firebase", "Redis"] },
-        { name: "DevOps", subSkills: ["Docker & Kubernetes", "ElasticSearch", "HAProxy / NGINX", "Prometheus & Grafana"] },
+        { name: "DevOps", subSkills: ["Docker & Kubernetes", "ElasticSearch", "NGINX / HAProxy", "Prometheus & Grafana"] },
         { name: "AWS / Azure / GCP (Cloud Platforms)" }
       ]
     }

@@ -49,7 +49,22 @@ export const vitec2 = new URL(
   import.meta.url
 ).href;
 
-export const ember_chat = new URL(
+export const parrotcloud = new URL(
+  "/src/assets/images/parrotcloud.webp",
+  import.meta.url
+).href;
+
+export const absortech = new URL(
+  "/src/assets/images/absortech.webp",
+  import.meta.url
+).href;
+
+export const klima = new URL(
+  "/src/assets/images/klima.webp",
+  import.meta.url
+).href;
+
+export const emberchat = new URL(
   "/src/assets/images/emberchat.webp",
   import.meta.url
 ).href;
@@ -61,6 +76,11 @@ export const mostra = new URL(
 
 export const last = new URL("/src/assets/images/last.webp", import.meta.url)
   .href;
+
+export const dor = new URL(
+  "/src/assets/images/dor.webp",
+  import.meta.url
+).href;
 
 export const selos = new URL(
   "/src/assets/images/selos-agro.webp",
@@ -102,19 +122,35 @@ export const developmentInfo = [
 export const sites = [
   {
     image: {
-      alt: "Ember Chat",
-      src: ember_chat
+      alt: "ParrotCloud",
+      src: parrotcloud
     },
-    url: "https://emberchat.app",
-    title: "Ember Chat - Bate Papo Temporario"
+    url: "https://parrotcloud.com.br/",
+    title: "ParrotCloud"
   },
   {
     image: {
-      alt: "Mostra IFRJ",
-      src: mostra
+      alt: "Absortech",
+      src: absortech
     },
-    url: "https://mostraifrjduquedecaxias.labculturadigital.com.br/",
-    title: "#Mostra IFRJ"
+    url: "https://app.absortech.site/",
+    title: "Absortech"
+  },
+  {
+    image: {
+      alt: "Klima",
+      src: klima
+    },
+    url: "https://klima-omega.vercel.app/",
+    title: "Klima"
+  },
+  {
+    image: {
+      alt: "Ember Chat",
+      src: emberchat
+    },
+    url: "https://emberchat.app/",
+    title: "Ember Chat"
   },
   {
     image: {
@@ -123,6 +159,14 @@ export const sites = [
     },
     url: "https://app.last.app.br/dashboard/",
     title: "Projeto LAST 2"
+  },
+  {
+    image: {
+      alt: "Dor",
+      src: dor
+    },
+    url: "https://dor.rastreabilidade.com.br/",
+    title: "Discriminante de Origem Rastreável (DOR)"
   },
   {
     image: {
