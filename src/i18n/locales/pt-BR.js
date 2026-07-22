@@ -15,8 +15,9 @@ export default {
     summaryDescription:
       "Formei-me Técnico em Informática pelo Instituto Federal do Rio de Janeiro e atualmente curso Ciência da Computação na Universidade Federal Fluminense. Também sou membro do IEEE, onde atuo como Vice-Presidente do capítulo Computer Society & Electronics Packaging Society da UFF, participando da organização e desenvolvimento de projetos tecnológicos com foco em impacto social.",
     softSkills: "Soft Skills",
+    technicalSkills: "Habilidades Técnicas",
     hardSkills: "Hard Skills",
-    developmentTitle: "Jornada Acadêmica e Projetos"
+    developmentTitle: "Educação"
   },
   projects: {
     title: "Projetos em Destaque",

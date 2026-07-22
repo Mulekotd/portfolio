@@ -51,16 +51,22 @@ export const DevelopmentCard = () => {
             viewport={{ once: true, amount: 0.15 }}
             transition={{ duration: 0.45 }}
         >
-            <h2 className="title text-uppercase mb-3">{t("home.developmentTitle")}</h2>
-            {developmentInfo.map((item) => (
-                <DevelopmentInfo
-                    key={item.titleKey}
-                    title={t(item.titleKey)}
-                    description={t(item.descriptionKey)}
-                    href={item.href}
-                    images={item.images}
-                />
-            ))}
+            <Card className="glass-card development-card">
+                <Card.Body>
+                    <h2 className="title text-uppercase mb-3">{t("home.developmentTitle")}</h2>
+                    <div className="development-stack">
+                        {developmentInfo.map((item) => (
+                            <DevelopmentInfo
+                                key={item.titleKey}
+                                title={t(item.titleKey)}
+                                description={t(item.descriptionKey)}
+                                href={item.href}
+                                images={item.images}
+                            />
+                        ))}
+                    </div>
+                </Card.Body>
+            </Card>
         </motion.section>
     );
 };

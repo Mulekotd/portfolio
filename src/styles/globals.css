@@ -15,7 +15,21 @@
   --muted: #54657d;
   --brand: #0070f3;
   --brand-2: #02c39a;
-  --shadow: 0 20px 45px rgba(9, 32, 65, 0.13);
+  --navbar-background-start: rgba(7, 27, 52, 0.92);
+  --navbar-background-end: rgba(11, 44, 82, 0.84);
+  --navbar-border: rgba(255, 255, 255, 0.1);
+  --navbar-text: #dbe8f8;
+  --navbar-active-background: rgba(255, 255, 255, 0.13);
+  --language-switch-background: rgba(255, 255, 255, 0.14);
+  --link-hover: #0055b0;
+  --subcard-surface: rgba(255, 255, 255, 0.48);
+  --chip-border: rgba(0, 112, 243, 0.35);
+  --chip-surface: rgba(216, 238, 255, 0.72);
+  --chip-text: #0059bd;
+  --soft-skill-surface: rgba(255, 255, 255, 0.62);
+  --social-chip-border: rgba(0, 112, 243, 0.24);
+  --social-chip-surface: rgba(255, 255, 255, 0.66);
+  --card-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 body,
@@ -24,10 +38,7 @@ html {
   min-height: 100%;
   font: normal 400 16px "Sora", "Segoe UI", sans-serif;
   color: var(--text);
-  background:
-    radial-gradient(circle at 15% 20%, rgba(0, 112, 243, 0.09), transparent 38%),
-    radial-gradient(circle at 82% 10%, rgba(2, 195, 154, 0.11), transparent 45%),
-    var(--bg);
+  background: var(--bg);
 }
 
 #root {
@@ -50,8 +61,8 @@ html {
   top: 0;
   z-index: 12;
   backdrop-filter: blur(16px);
-  background: linear-gradient(95deg, rgba(7, 27, 52, 0.92), rgba(11, 44, 82, 0.84));
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background: linear-gradient(95deg, var(--navbar-background-start), var(--navbar-background-end));
+  border-bottom: 1px solid var(--navbar-border);
 }
 
 .brand-highlight {
@@ -69,7 +80,7 @@ html {
 }
 
 .nav-link-modern {
-  color: #dbe8f8 !important;
+  color: var(--navbar-text) !important;
   border-radius: 999px;
   padding: 0.35rem 0.85rem !important;
   transition: background-color 0.2s ease, color 0.2s ease;
@@ -77,13 +88,13 @@ html {
 
 .nav-link-modern.active,
 .nav-link-modern:hover {
-  color: #fff !important;
-  background-color: rgba(255, 255, 255, 0.13);
+  color: var(--surface-strong) !important;
+  background-color: var(--navbar-active-background);
 }
 
 .language-switch {
   display: inline-flex;
-  background: rgba(255, 255, 255, 0.14);
+  background: var(--language-switch-background);
   border-radius: 999px;
   padding: 0.2rem;
   gap: 0.2rem;
@@ -92,15 +103,15 @@ html {
 .language-switch button {
   border: none;
   background: transparent;
-  color: #dbe8f8;
+  color: var(--navbar-text);
   border-radius: 999px;
   font-size: 0.78rem;
   padding: 0.2rem 0.55rem;
 }
 
 .language-switch button.active {
-  background: #fff;
-  color: #11233d;
+  background: var(--surface-strong);
+  color: var(--text);
   font-weight: 700;
 }
 
@@ -119,47 +130,19 @@ html {
   gap: 1.15rem;
 }
 
-.bg-orb {
-  position: absolute;
-  border-radius: 999px;
-  filter: blur(4px);
-  z-index: -1;
-  pointer-events: none;
-}
-
-.bg-orb-a {
-  width: 240px;
-  height: 240px;
-  top: 12%;
-  right: -80px;
-  background: radial-gradient(circle at 30% 35%, rgba(0, 112, 243, 0.24), rgba(0, 112, 243, 0.03));
-}
-
-.bg-orb-b {
-  width: 200px;
-  height: 200px;
-  top: 52%;
-  left: -72px;
-  background: radial-gradient(circle at 50% 50%, rgba(2, 195, 154, 0.2), rgba(2, 195, 154, 0.03));
-}
-
 .glass-card {
   border: 1px solid var(--stroke) !important;
   background: var(--surface) !important;
-  box-shadow: var(--shadow);
+  box-shadow: var(--card-shadow);
   border-radius: 22px !important;
   backdrop-filter: blur(8px);
 }
 
 .project-card {
   border: 1px solid var(--stroke) !important;
-  box-shadow: var(--shadow);
-  transition: box-shadow 0.25s ease, transform 0.25s ease;
+  box-shadow: var(--card-shadow);
+  transition: transform 0.25s ease;
   background: var(--surface-strong);
-}
-
-.project-card:hover {
-  box-shadow: 0 24px 50px rgba(9, 32, 65, 0.22);
 }
 
 .project-card-image-wrap {
@@ -199,7 +182,7 @@ html {
 }
 
 .project-card-link:hover {
-  color: #0055b0;
+  color: var(--link-hover);
   text-decoration: underline;
 }
 
@@ -226,30 +209,69 @@ html {
   padding: 0.32rem;
   border-radius: 999px;
   background: linear-gradient(130deg, var(--brand), var(--brand-2));
-  box-shadow: 0 18px 38px rgba(2, 38, 70, 0.24);
 }
 
 .about-card {
   padding: 1.3rem 1.35rem;
 }
 
-.skills-grid {
+.skills-card {
+  padding: 0.35rem;
+}
+
+.skills-group + .skills-group {
+  border-top: 1px solid var(--stroke);
+  margin-top: 1.75rem;
+  padding-top: 1.75rem;
+}
+
+.skills-title {
+  font-family: "Space Grotesk", "Segoe UI", sans-serif;
+  color: var(--text);
+  margin-bottom: 1rem;
+}
+
+.technical-skills-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1rem;
 }
 
-.skills-column {
-  min-height: 100%;
+.technical-skill-card {
+  border: 1px solid var(--stroke);
+  border-radius: 12px;
+  background: var(--subcard-surface);
+  padding: 1.1rem;
 }
 
-.skills-title {
+.technical-skill-card h4 {
   font-family: "Space Grotesk", "Segoe UI", sans-serif;
-  margin-bottom: 0.75rem;
+  color: var(--brand);
+  font-size: 1.05rem;
+  margin-bottom: 0.8rem;
 }
 
-.skills-item {
-  cursor: default;
+.skill-chips,
+.soft-skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.skill-chip,
+.soft-skill {
+  border: 1px solid var(--chip-border);
+  border-radius: 6px;
+  background: var(--chip-surface);
+  color: var(--chip-text);
+  font-size: 0.92rem;
+  line-height: 1.25;
+  padding: 0.38rem 0.68rem;
+}
+
+.soft-skill {
+  border-radius: 999px;
+  background: var(--soft-skill-surface);
   color: var(--text);
 }
 
@@ -309,14 +331,14 @@ html {
   border-radius: 999px;
   text-decoration: none;
   color: var(--brand);
-  border: 1px solid rgba(0, 112, 243, 0.24);
-  background: rgba(255, 255, 255, 0.66);
+  border: 1px solid var(--social-chip-border);
+  background: var(--social-chip-surface);
   padding: 0.35rem 0.7rem;
   font-size: 0.92rem;
 }
 
 .social-chip:hover {
-  color: #fff;
+  color: var(--surface-strong);
   background: var(--brand);
   border-color: var(--brand);
 }
@@ -345,7 +367,7 @@ html {
     padding: 1rem 0.72rem 1.5rem !important;
   }
 
-  .skills-grid {
+  .technical-skills-grid {
     grid-template-columns: 1fr;
   }
 

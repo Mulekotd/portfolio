@@ -15,8 +15,9 @@ export default {
     summaryDescription:
       "I graduated as a IT Technician from the Federal Institute of Rio de Janeiro and I am currently pursuing a Computer Science degree at Federal Fluminense University. I'm also an IEEE member, serving as Vice-Chair of the Computer Society & Electronics Packaging Society chapter at UFF, participating in the organization and development of technology projects focused on social impact.",
     softSkills: "Soft Skills",
+    technicalSkills: "Technical Skills",
     hardSkills: "Hard Skills",
-    developmentTitle: "Academic Journey and Projects"
+    developmentTitle: "Education"
   },
   projects: {
     title: "Featured Projects",

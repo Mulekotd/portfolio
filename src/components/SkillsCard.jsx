@@ -1,99 +1,77 @@
 import { Card } from "react-bootstrap";
 
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 
-import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
-const subSkillVariants = {
-  hidden: { height: 0, opacity: 0 },
-  visible: { height: "auto", opacity: 1, transition: { duration: 0.3, ease: "easeOut" } },
-  exit: { height: 0, opacity: 0, transition: { duration: 0.2, ease: "easeIn" } }
-};
-
-const SkillInfo = ({ title = '', skills = [{ name: '', subSkills: [] }] }) => {
-  const [expandedSkill, setExpandedSkill] = useState(null);
-
-  const toggle = (name) => {
-    setExpandedSkill((prev) => (prev === name ? null : name));
-  };
-
-  return (
-    <Card className="glass-card skills-column d-flex flex-column p-4 h-100">
-      <h3 className="skills-title">{title}</h3>
-      <ul className="d-flex flex-column gap-2 mb-0">
-        {skills.map(({ name, subSkills = [] }, index) => (
-          <li
-            key={index}
-            className="skills-item"
-            onClick={() => subSkills.length > 0 && toggle(name)}
-            style={subSkills.length > 0 ? { cursor: "pointer" } : undefined}
-          >
-            <span className="d-flex align-items-center gap-1">{name}</span>
-            <AnimatePresence initial={false}>
-              {subSkills.length > 0 && expandedSkill === name && (
-                <motion.ul
-                  className="d-flex flex-column gap-1 mt-1 ps-3"
-                  style={{ listStyle: "disc", overflow: "hidden" }}
-                  variants={subSkillVariants}
-                  initial="hidden"
-                  animate="visible"
-                  exit="exit"
-                >
-                  {subSkills.map((subSkill, idx) => (
-                    <li style={{ cursor: "default" }} key={idx}>{subSkill}</li>
-                  ))}
-                </motion.ul>
-              )}
-            </AnimatePresence>
-          </li>
-        ))}
-      </ul>
-    </Card>
-  );
-};
+const technicalSkills = [
+  {
+    name: "Frontend",
+    skills: ["Next.js", "React.js", "Redux", "Zustand", "Tailwind CSS", "SPA Architecture", "Component Design System"]
+  },
+  {
+    name: "Backend",
+    skills: ["Express.js", "Fastify", "Nest.js", "Django", "FastAPI", "RESTful API Design"]
+  },
+  {
+    name: "Databases",
+    skills: ["PostgreSQL", "MySQL", "Redis", "Firebase", "Data Modeling", "Query Optimization"]
+  },
+  {
+    name: "Cloud & DevOps",
+    skills: ["Docker", "Kubernetes", "CI/CD (Github Actions, Jenkins)", "AWS", "Azure", "NGINX", "Monitoring & Logging"]
+  },
+  {
+    name: "AI / Machine Learning",
+    skills: ["LLM Integration (OpenAI, Ollama, API-based & local models)", "Prompt Engineering", "Embeddings", "Context Optimization", "Model Optimization (latency, cost, quantization)"]
+  },
+  {
+    name: "Architectures",
+    skills: ["Client-server", "Model-View-Controller", "Microservices", "Layers"]
+  }
+];
 
 export const SkillsCard = () => {
   const { t } = useTranslation();
-
-  const skillsInfo = [
-    {
-      title: t("home.softSkills"),
-      skills: [
-        { name: t("skills.adaptability") },
-        { name: t("skills.curiosity") },
-        { name: t("skills.teamwork") },
-        { name: t("skills.communication") }
-      ]
-    },
-    {
-      title: t("home.hardSkills"),
-      skills: [
-        { name: "Mobile", subSkills: ["React Native"] },
-        { name: "Frontend", subSkills: ["NextJS / ReactJS", "Redux / Zustand / Jotai", "Yup / Zod", "TailwindCSS / Bootstrap", "MUI / Shadcn"] },
-        { name: "Backend", subSkills: ["Express / Fastify / NestJS", "Drizzle / Prisma", "Go"] },
-        { name: "Databases", subSkills: ["PostgreSQL / MySQL", "Firebase", "Redis"] },
-        { name: "DevOps", subSkills: ["Docker & Kubernetes", "ElasticSearch", "NGINX / HAProxy", "Prometheus & Grafana"] },
-        { name: "AWS / Azure / GCP (Cloud Platforms)" }
-      ]
-    }
+  const softSkills = [
+    t("skills.adaptability"),
+    t("skills.curiosity"),
+    t("skills.teamwork"),
+    t("skills.communication")
   ];
 
   return (
     <motion.section
-      className="skills-grid"
+      className="skills-section"
       initial={{ opacity: 0, y: 18 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.45 }}
     >
-      {skillsInfo.map((item) => (
-        <SkillInfo
-          key={item.title}
-          title={item.title}
-          skills={item.skills}
-        />
-      ))}
+      <Card className="glass-card skills-card">
+        <Card.Body>
+          <section className="skills-group" aria-labelledby="technical-skills-title">
+            <h3 className="skills-title" id="technical-skills-title">{t("home.hardSkills")}</h3>
+            <div className="technical-skills-grid">
+              {technicalSkills.map((group) => (
+                <article className="technical-skill-card" key={group.name}>
+                  <h4>{group.name}</h4>
+                  <div className="skill-chips">
+                    {group.skills.map((skill) => <span className="skill-chip" key={skill}>{skill}</span>)}
+                  </div>
+                </article>
+              ))}
+            </div>
+          </section>
+
+          <section className="skills-group soft-skills-group" aria-labelledby="soft-skills-title">
+            <h3 className="skills-title" id="soft-skills-title">{t("home.softSkills")}</h3>
+            <div className="soft-skills-list">
+              {softSkills.map((skill) => <span className="soft-skill" key={skill}>{skill}</span>)}
+            </div>
+          </section>
+        </Card.Body>
+      </Card>
     </motion.section>
   );
-}
+};
