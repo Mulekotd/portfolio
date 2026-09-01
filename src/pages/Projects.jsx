@@ -24,10 +24,11 @@ export default function Projects() {
       </motion.div>
 
       <Row className="g-4">
-        {sites.map(({ image, title, url }) => (
+        {sites.map(({ image, video, title, url }) => (
           <Col key={url} xl={3} lg={4} md={6} sm={12}>
             <ProjectCard
               image={image}
+              video={video}
               title={title}
               url={url}
             />

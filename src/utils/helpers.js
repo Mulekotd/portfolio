@@ -4,7 +4,7 @@ export const greetingMessage = (language = "pt-BR") => {
   let hour = Number(
     new Date().toLocaleTimeString(normalizedLanguage, {
       hour: "numeric",
-      hour12: false,
+      hour12: false
     })
   );
 
@@ -56,11 +56,6 @@ export const parrotcloud = new URL(
 
 export const absortech = new URL(
   "/src/assets/images/absortech.webp",
-  import.meta.url
-).href;
-
-export const klima = new URL(
-  "/src/assets/images/klima.webp",
   import.meta.url
 ).href;
 
@@ -137,10 +132,7 @@ export const sites = [
     title: "Absortech"
   },
   {
-    image: {
-      alt: "Klima",
-      src: klima
-    },
+    video: "https://www.youtube.com/watch?v=gr3bfEvkEgE",
     url: "https://klima-omega.vercel.app/",
     title: "Klima"
   },

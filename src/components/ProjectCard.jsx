@@ -6,21 +6,36 @@ import Tilt from "react-parallax-tilt";
 
 import { useTranslation } from "react-i18next";
 
-export const ProjectCard = ({ image = { alt: '', src: '' }, title, url }) => {
+import { getEmbedUrl } from "/src/utils/youtube";
+
+export const ProjectCard = ({ image = { alt: '', src: '' }, video, title, url }) => {
   const { t } = useTranslation();
+
+  const embedUrl = typeof video === "string" ? getEmbedUrl(video) : null;
 
   return (
     <Tilt tiltMaxAngleX={7} tiltMaxAngleY={7} scale={1.01} glareEnable glareMaxOpacity={0.12}>
       <motion.div whileHover={{ y: -6 }} transition={{ type: "spring", stiffness: 180, damping: 16 }}>
         <Card className="project-card rounded d-flex flex-column align-items-center overflow-hidden w-100 h-100">
           <div className="project-card-image-wrap">
-            <Image
-              className="project-card-image"
-              alt={image.alt}
-              src={image.src}
-              loading="lazy"
-              decoding="async"
-            />
+            {embedUrl ? (
+              <iframe
+                className="project-card-video"
+                src={embedUrl}
+                title={title}
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              />
+            ) : (
+              <Image
+                className="project-card-image"
+                alt={image.alt}
+                src={image.src}
+                loading="lazy"
+                decoding="async"
+              />
+            )}
           </div>
           <div className="project-card-body">
             <p className="project-card-title mb-1">{title}</p>
